@@ -8,14 +8,16 @@
     <!-- Font Awesome Icon Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- My own created stylesheet -->
+    <link rel="stylesheet" href="styles/nav_styles.css">
     <link rel="stylesheet" href="styles/home_styles.css">
+    <!-- Main JavaScript File -->
+    <script src="javascript/main.js" defer></script>
 </head>
 <body>
     <!-- Header and Navigation -->
     <header>
         <nav>
-            <a href="#home" class="active nav-element" >Home</a>
-            <a href="#today" class="nav-element">Today</a>
+            <a href="home.html" class="active nav-element">Home</a>
             <div class="dropdown">
                 <button class="drop-button">Explore<span class="space-next-to-icon"><i class="fa fa-caret-down"></i></span></button>
                 <div class="dropdown-content">
@@ -24,17 +26,69 @@
                     <a href="#Animation">Animation</a>
                 </div>
             </div>
+            <a href="blog.html" class="nav-element">Blog</a>
             <form action="#search" class="search-bar nav-element" >
                 <input type="text" placeholder="Search...">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <a href="#account" class="nav-element account-link">My Account</a></li>
+            <div>
+                <input class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp">
+            </div>
         </nav>
     </header>
 
     <!-- Main Content... Posts-->
     <main>
-
+        <div id="main-container" class="flex">
+            <div id="right-column" class="flex">
+                <div class="post">
+                    <img src="images/lonely_crop.jpg" alt="Crop">
+                    <div class="overlay flex">
+                        <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                        <a href="#">cathy123</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <img src="images/piano.jpg" alt="Piano">
+                    <div class="overlay flex">
+                        <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                        <a href="#">fredburger23</a>
+                    </div>
+                </div>
+            </div>
+            <div id="mid-column" class="flex">
+                <div class="post">
+                    <img src="images/sand.jpg" alt="Sand">
+                    <div class="overlay flex">
+                        <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                        <a href="#">brian007</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <img src="images/train_station.jpg" alt="Train Station">
+                    <div class="overlay flex">
+                        <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                        <a href="#">rick_rolled</a>
+                    </div>
+                </div>
+            </div>
+            <div id="left-column" class="flex">
+                <div class="post">
+                    <img src="images/nightlife.jpg" alt="Night Life">
+                    <div class="overlay flex">
+                        <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                        <a href="#">kayla's_photography</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <img src="images/winter_tree.jpg" alt="Tree in Winter">
+                    <div class="overlay flex">
+                        <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                        <a href="#">kayla's_photography</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </main>
@@ -45,3 +99,6 @@
     </footer>
 </body>
 </html>
+
+
+<!-- Will need to figure out url of profile and add it to each post -->

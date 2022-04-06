@@ -1,120 +1,62 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
+/* Main (Posts) Content */
+body {
+    background-color: #111;
+    background: linear-gradient(to top, #222, #000);
 }
 
-header {
-    background-color: #333;
-    color: oldlace;
-    text-align: center;
-}
-
-
-/* Navigation Styles */
-nav {
+.flex {
     display: flex;
-    align-items: center;
-    overflow: hidden;
 }
 
-nav a {
-    font-size: 16px;
-    color: oldlace;
-    text-decoration: none;
-
-    float: left;
-    text-align: center;
-    padding: 14px 16px;
+#main-container {
+    justify-content: center;
 }
 
-.account-link {
-    float: right;
-    margin-left: 8px;
+.post img {
+    max-width: 420px;
 }
 
-/* Dropdown Button Styles */
-.dropdown {
-    float: left;
-    overflow: hidden;
+.post {
+    position: relative;
+    margin-top: 10px;
 }
 
-.dropdown .drop-button {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: oldlace;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
+#right-column, #mid-column, #left-column {
+    flex-direction: column;
+    margin: 8px;
 }
 
-nav a:hover, .dropdown:hover .drop-button {
-    background-color: firebrick;
-}
-
-.dropdown-content {
-    display: none;
+.overlay {
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.space-next-to-icon {
-    padding-left: 5px;
-}
-
-
-/* Search Bar Styles */
-.search-bar {
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
     width: 100%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    border: 1px solid gray;
-    border-radius: 15px;
-    padding: 4px 8px;
-
-    margin-left: auto;
-    float: right;
-}
-
-.search-bar input {
-    background: transparent;
-    flex: 1;
-    border: 0;
-    outline: none;
-    padding: 5px 3px;
-    font-size: 16px;
+    transition: .5s ease;
+    opacity:0;
     color: oldlace;
+    font-size: 20px;
+    padding: 16px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Changes border when the search bar is selected */
-.search-bar:focus-within {
-    border: 1px solid oldlace;
+.post:hover .overlay {
+    opacity: 1;
 }
 
-/* Changes the placeholder text color within the search bar */
-::placeholder {
-    color: rgb(180, 180, 180);
+.overlay a {
+    text-decoration: none;
+    color: oldlace;
+    margin-left: 0.5em;
+}
+.overlay a:hover {
+    text-decoration: underline;
+}
+
+.overlay input[type="image"] {
+    border-radius: 100%;
+    width: 3em;
 }

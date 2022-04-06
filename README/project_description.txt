@@ -1,0 +1,7 @@
+Photography/Art Website and Blog
+
+Users can post their favorite and most recent work (in the form of pictures and captions).  
+They can write articles relating to photography and art.  Users can also link within their posts 
+the materials/equipment/technique they used (camera equipment, paint brushes, paint, medium, etc.)
+
+
