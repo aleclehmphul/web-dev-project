@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#profile-picture {
+    max-width: 250px;
+    border-radius: 100%;
+}
+
+#interests a {
+    text-decoration: none;
+    color: oldlace;
+    padding: 4px;
+    background-color: #555;
+    border-radius: 10px;
+    font-size: 14px;
+}
+#interests a:hover {
+    background-color: #777;
+}
+
+#profile-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    margin: 15px;
+}
+
+main {
+    color: oldlace;
+}
+
+.padding {
+    padding: 5px;
+}
+
+#name {
+    font-size: 30px;
+}
+
+#update-profile-btn {
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    background-color: #555;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+#update-profile-btn:hover {
+    background-color: white;
+    color: #555;
+}
+
+#profile-information div {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}

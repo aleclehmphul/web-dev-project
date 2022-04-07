@@ -2,6 +2,7 @@
 body {
     background-color: #111;
     background: linear-gradient(to top, #222, #000);
+    color: oldlace;
 }
 
 .flex {

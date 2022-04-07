@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registering</title>
     <link rel="stylesheet" href="styles/login_and_registrating_styles.css">
     <!-- Main JavaScript File -->
     <script src="javascript/main.js" defer></script>
@@ -16,25 +16,29 @@
         <hr>
         <label for="firstname">First Name</label>
         <br>
-        <input type="text" name="firstname" id="firstname">
+        <input type="text" name="firstname" id="firstname" required>
         <br>
         <label for="lastname">Last Name</label>
         <br>
-        <input type="text" name="lastname" id="lastname">
+        <input type="text" name="lastname" id="lastname" required>
         <br>
         <label for="birthdate">Birthdate</label>
         <br>
-        <input type="date" name="birthdate" id="birthdate">
+        <input type="date" name="birthdate" id="birthdate" required>
         <br>
         <label for="email">Email</label>
         <br>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="username">User Name</label>
+        <br>
+        <input type="text" name="username" id="username" required>
         <br>
         <label for="pswd">Password</label>
         <br>
-        <input type="password" name="pswd" id="pswd">
+        <input type="password" name="pswd" id="pswd" required>
         <br>
-        <input type="submit" value="Create Account">
+        <input id="registration-submit-btn" type="submit" value="Create Account">
     </form>
 </body>
 </html>

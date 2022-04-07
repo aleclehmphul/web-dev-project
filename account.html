@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <!-- Font Awesome Icon Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- My own created stylesheet -->
+    <link rel="stylesheet" href="styles/nav_styles.css">
+    <link rel="stylesheet" href="styles/account_styles.css">
+    <link rel="stylesheet" href="styles/home_styles.css">
+    <!-- Main JavaScript File -->
+    <script src="javascript/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html" class="nav-element">Home</a>
+            <div class="dropdown">
+                <button class="drop-button">Explore<span class="space-next-to-icon"><i class="fa fa-caret-down"></i></span></button>
+                <div class="dropdown-content">
+                    <a href="#Art">Art</a>
+                    <a href="#Photography">Photography</a>
+                    <a href="#Animation">Animation</a>
+                </div>
+            </div>
+            <a href="blog.html" class="nav-element">Blog</a>
+            <form action="#search" class="search-bar nav-element" >
+                <input type="text" placeholder="Search...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <div class="active">
+                <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp">
+            </div>
+        </nav>
+    </header>
+
+    <main id="profile">
+        <div class="heading">
+            <div id="profile-information">
+                <div>
+                    <img id="profile-picture" src="images/blank-profile-picture.webp" alt="Your Profile Picture">
+                </div>
+
+                <div>
+                    <h3 id="name" class="padding">Alec Lehmphul</h3>
+                    <p id="bio" class="padding">Bio information would go here!</p>
+                    <p class="padding">Interests:</p>
+                    <div id="interests" class="padding">
+                        <a href="home.html">Photography</a>
+                        <a href="home.html">Landscapes</a>
+                    </div>
+                </div>
+            </div>
+            <button id="update-profile-btn" class="padding">Update Profile</button>
+        </div>
+
+        <hr>
+
+        <!-- The User's Posts would load here -->
+        <div id="user-posts">
+            <div id="main-container" class="flex">
+                <div id="right-column" class="flex">
+                    <div class="post">
+                        <img src="images/lonely_crop.jpg" alt="Crop">
+                        <div class="overlay flex">
+                            <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                            <a href="#">aleclehmphul</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="mid-column" class="flex">
+                    <div class="post">
+                        <img src="images/train_station.jpg" alt="Train Station">
+                        <div class="overlay flex">
+                            <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                            <a href="#">aleclehmphul</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="left-column" class="flex">
+                    <div class="post">
+                        <img src="images/nightlife.jpg" alt="Night Life">
+                        <div class="overlay flex">
+                            <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
+                            <a href="#">aleclehmphul</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
