@@ -169,7 +169,3 @@ function validateLogin(event) {
     else
         console.log("Invalid User Name or Password");
 } 
-
-
-// To test login page
-User.users.push(new User("Alec", "Lehmphul", new Date(), "lehmphua2@newpaltz.edu", "aleclehmphul", "Password123!"));

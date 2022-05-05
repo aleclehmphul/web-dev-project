@@ -7,14 +7,15 @@
     <title>Login</title>
     <link rel="stylesheet" href="styles/login_and_registrating_styles.css">
     <!-- Main JavaScript File -->
-    <script src="javascript/main.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/user-script.js" defer></script>
 </head>
 <body>
     <!-- Form containing the fields for logging in -->
-    <form action="#">
+    <form id="login-form">
         <h2>Welcome!<br>Please Login Below</h2>
         <hr>
-        <label for="email">User Name</label>
+        <label for="username">User Name</label>
         <br>
         <input type="text" name="username" id="username">
         <br>

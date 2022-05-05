@@ -7,11 +7,12 @@
     <title>Registering</title>
     <link rel="stylesheet" href="styles/login_and_registrating_styles.css">
     <!-- Main JavaScript File -->
-    <script src="javascript/main.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/user-script.js" defer></script>
 </head>
 <body>
     <!-- Form containing all the fields for registering -->
-    <form action="#">
+    <form id="reg-form">
         <h2>Enter information to create your account</h2>
         <hr>
         <label for="firstname">First Name</label>
@@ -39,6 +40,7 @@
         <input type="password" name="pswd" id="pswd" required>
         <br>
         <input id="registration-submit-btn" type="submit" value="Create Account">
+        <p class="error"></p>
     </form>
 </body>
 </html>

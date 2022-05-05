@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="styles/nav_styles.css">
     <link rel="stylesheet" href="styles/account_styles.css">
     <link rel="stylesheet" href="styles/home_styles.css">
-    <!-- Main JavaScript File -->
-    <script src="javascript/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -34,11 +32,15 @@
             <div class="active">
                 <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp">
             </div>
+            <button id="logout" class="nav-element nav-button">Logout</button>
         </nav>
     </header>
 
-    <main id="profile">
-        <div class="heading">
+    <main>
+        <section id="profile"></section>
+        <section id="editForm"></section>
+        
+        <!-- <div class="heading">
             <div id="profile-information">
                 <div>
                     <img id="profile-picture" src="images/blank-profile-picture.webp" alt="Your Profile Picture">
@@ -55,7 +57,7 @@
                 </div>
             </div>
             <button id="update-profile-btn" class="padding">Update Profile</button>
-        </div>
+        </div> -->
 
         <hr>
 
@@ -92,5 +94,9 @@
             </div>
         </div>
     </main>
+
+    <!-- Main JavaScript File -->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/profile.js"></script>
 </body>
 </html>

@@ -45,6 +45,15 @@ nav a {
     padding: 16px 18px;
 }
 
+.nav-button {
+    border: none;
+    font-size: 20px;
+    background-color: #333;
+    color: oldlace;
+    text-align: center;
+    padding: 16px 18px;
+}
+
 .account-link {
     float: right;
     margin-left: 10px;
@@ -77,7 +86,7 @@ nav a {
     margin: 0;
 }
 
-nav a:hover, .dropdown:hover .drop-button {
+nav a:hover, .dropdown:hover .drop-button, .nav-button:hover {
     background-color: #555;
 }
 

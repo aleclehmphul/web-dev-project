@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Blog</title>
+    <title>Blog</title>
     <!-- Font Awesome Icon Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- My Stylesheets -->
     <link rel="stylesheet" href="styles/nav_styles.css">
-    <link rel="stylesheet" href="styles/example_blog.css">
-    <script src="javascript/main.js" defer></script>
+    <link rel="stylesheet" href="styles/blog_styles.css">
+    <!-- Main JavaScript File -->
+    <script type="module" src="scripts/main.js" defer></script>
 </head>
 <body>
     <!-- Header and Navigation -->
@@ -32,22 +34,31 @@
             <div>
                 <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp">
             </div>
+            <button id="logout" class="nav-element nav-button">Logout</button>
         </nav>
     </header>
 
-    <main class="flex">
-        <div>
-            <h1>Title of Blog Post</h1>
-            <h3>Author of Blog Post</h3>
-        </div>
-        <div>
-            <img id="blog-img" src="images/blank_image.jpg" alt="Blank Image">
-            <p>Image description</p>
-        </div>
-        <div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet officia nam velit incidunt aliquid voluptas, aliquam eaque sunt debitis tenetur consectetur atque sequi! Iure provident nemo est sint cupiditate vitae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est suscipit voluptas molestias! Voluptas asperiores neque rem iusto fuga, sit laboriosam labore corrupti dolores excepturi itaque exercitationem, blanditiis maiores! Sint, similique!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, veritatis dignissimos, neque, fuga voluptatum dicta amet dolore a voluptate beatae animi maxime velit ut repudiandae vitae excepturi laboriosam porro laudantium.</p>
+
+    <main>
+        <div id="main-container" class="flex">
+            <div id="right-column" class="flex">
+                <div id="blog-post1" class="blog-post">
+                    <img src="images/photographer-blog.jpg" alt="Photographer">
+                    <h3 id="blog-title">Best Gear to Start As A Photographer</h3>
+                </div>
+            </div>
+            <div id="mid-column" class="flex">
+                <div id="blog-post2" class="blog-post">
+                    <img src="images/landscape-blog.jpg" alt="US Landscapes">
+                    <h3 id="blog-title">Landscape Inspiration Across the United States</h3>
+                </div>
+            </div>
+            <div id="left-column" class="flex">
+                <div id="blog-post3" class="blog-post">
+                    <img src="images/paint.jpg" alt="Paint">
+                    <h3 id="blog-title">Painting On A Budget</h3>
+                </div>
+            </div>
         </div>
     </main>
 </body>
