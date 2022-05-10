@@ -2,9 +2,9 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const users = User.getUsers();
+        const users = await User.getUsers();
         res.send(users);
     } catch (err) {
         res.status(401).send({message: err.message});
@@ -31,16 +31,17 @@ router.post('/register', async (req, res) => {
 
 router.delete('/delete', async (req, res) => {
     try {
-        User.deleteUser(req.body.userId);
+        await User.deleteUser(req.body.userId);
         res.send({success: "We'll Miss You :("});
     } catch (error) {
         res.status(401).send({message: error.message});
     }
 })
 
-router.put('/edit', (req, res) => {
+router.put('/edit', async (req, res) => {
     try {
-        const user = User.editUser(req.body);
+        console.log(req.body);
+        const user = await User.editUser(req.body);
         res.send({...user, password: undefined});
     } catch (error) {
         res.status(401).send({message: error.message});

@@ -1,10 +1,10 @@
+
 const con = require('./db_connect');
 
 // Creates user table if it does not exist
-con.connect(function(err) {
-    if (err) throw err;
+async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS users (
-        user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        user_id INT NOT NULL AUTO_INCREMENT,
         username VARCHAR(255) NOT NULL UNIQUE,
         user_email VARCHAR(255) NOT NULL UNIQUE,
         user_password VARCHAR(255) NOT NULL,
@@ -13,68 +13,84 @@ con.connect(function(err) {
         user_birthdate DATE NOT NULL,
         CONSTRAINT user_pk PRIMARY KEY(user_id)
     )`;
-});
-con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("Users table created")
-});
+    await con.query(sql);
+}
+createTable();
 
+// Gets all users
+let getUsers = async function() {
+    const sql = "SELECT * FROM users";
+    return await con.query(sql);
+};
 
-// OLD WAY BEFORE DATABASE
-// const users = [
-//     {
-//         userId: 12345,
-//         userName: "cathy123",
-//         password: "icecream"
-//     },
-//     {
-//         userId: 55555,
-//         userName: "fredburger54",
-//         password: "password123"
-//     }
-// ];
+// Gets a single user based off of userId or username
+async function getUser(user) {
+    let sql;
+    if (user.userId) {
+        sql = `SELECT * FROM users WHERE user_id = ${user.userId}`;
+    } else {
+        sql = `SELECT * FROM users WHERE username = "${user.username}"`;
+    }
 
-// let getUsers = () => users;
+    return await con.query(sql);
+}
 
-// function login(username, password) {
-//     const user = users.filter((u) => u.userName === username);
-//     if (!user[0]) throw Error("User not found");
-//     if(user[0].password !== password) throw Error("Password is incorrect.");
+// Returns user if user exists in database
+async function userExists(username) {
+    const sql = `SELECT * FROM users WHERE username = "${username}"`;
 
-//     return user[0];
-// }
+    return await con.query(sql);
+}
 
-// function register(user) {
-//     const u = userExists(user.username);
-//     if(u.length > 0) throw Error("Username already in use");
-//     const newUser = {
-//         userId: users[users.length-1].userId + 1,
-//         userName: user.username,
-//         password: user.password
-//     }
-//     users.push(newUser);
+// If user exists, login
+async function login(username, password) {
+    const user = await userExists(username);
+    if (!user[0]) throw Error("User not found");
+    if (user[0].user_password !== password) throw Error("Password is incorrect.");
 
-//     return newUser;
-// }
+    return user[0];
+}
 
-// function deleteUser(userId) {
-//     let i = users.map((user) => user.userId).indexOf(userId);
-//     users.slice(i, 1);
-//     console.log(users);
-// }
+// Registers new user by adding info to users table
+async function register(user) {
+    const u = userExists(user.username);
+    if (u.length > 0) throw Error("Username already exists")
 
-// function editUser(user) {
-//     const u = userExists(user.userName);
-//     if (u.length > 0) throw Error('Username already exists');
+    const sql = `INSERT INTO users (
+        username,
+        user_email,
+        user_password,
+        user_first_name,
+        user_last_name,
+        user_birthdate
+        ) VALUES (
+        "${user.username}",
+        "${user.email}",
+        "${user.password}",
+        "${user.firstname}",
+        "${user.lastname}",
+        "${user.birthdate}"
+    )`;
 
-//     const cUser = users.filter((u) => u.userId === user.userId);
-//     cUser[0].userName = user.userName;
-//     return cUser[0];
-// }
+    const insert = await con.query(sql);
+    const newUser = await getUser(user);
+    return newUser[0];
+}
 
+// Updates username in database with new username
+async function editUser(user) {
+    console.log(user.userId);
+    const sql = `UPDATE users SET username = "${user.username}" WHERE user_id = ${user.userId}`;
+    
+    const update = await con.query(sql);
+    const newUser = await getUser(user);
+    return newUser[0];
+}
 
-// function userExists(username) {
-//     return users.filter((u) => u.userName === username);
-// }
+// Deletes user from database based off of their user_id
+async function deleteUser(user_id) {
+    const sql = `DELETE FROM users WHERE user_id = ${user_id}`;
+    await con.query(sql);
+}
 
-// module.exports = { getUsers, login, register, deleteUser };
+module.exports = { getUsers, login, register, deleteUser, editUser, getUser, createTable };
