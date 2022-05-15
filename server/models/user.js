@@ -26,8 +26,8 @@ let getUsers = async function() {
 // Gets a single user based off of userId or username
 async function getUser(user) {
     let sql;
-    if (user.userId) {
-        sql = `SELECT * FROM users WHERE user_id = ${user.userId}`;
+    if (user.user_id) {
+        sql = `SELECT * FROM users WHERE user_id = ${user.user_id}`;
     } else {
         sql = `SELECT * FROM users WHERE username = "${user.username}"`;
     }

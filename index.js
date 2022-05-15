@@ -2,7 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
+// Routes
 const userRoutes = require('./server/routes/user');
+const postRoutes = require('./server/routes/user_post');
 
 app.use(express.json());  // Allows us to read our JSON object
 
@@ -18,6 +20,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <!-- Font Awesome Icon Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- My own created stylesheet -->
+    <link rel="stylesheet" href="styles/nav_styles.css">
+    <link rel="stylesheet" href="styles/account_styles.css">
+    <link rel="stylesheet" href="styles/home_styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html" class="active nav-element">Home</a>
+            <div class="dropdown">
+                <button class="drop-button">Explore<span class="space-next-to-icon"><i class="fa fa-caret-down"></i></span></button>
+                <div class="dropdown-content">
+                    <a href="#Art">Art</a>
+                    <a href="#Photography">Photography</a>
+                    <a href="#Animation">Animation</a>
+                </div>
+            </div>
+            <div>
+                <a href="account.html" class="nav-element">Profile</a>
+                <!-- <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp"> -->
+            </div>
+            <button id="logout" class="nav-element nav-button">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="center">
+            <section id="postImage"></section>
+            <section id="commentSection"></section>
+            <section id="updateMessage"></section>
+        </div>
+    </main>
+
+    <!-- Main JavaScript File -->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/post-script.js"></script>
+</body>
+</html>

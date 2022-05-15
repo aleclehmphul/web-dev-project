@@ -1,8 +1,13 @@
 /* Main (Posts) Content */
 body {
     background-color: #111;
-    background: linear-gradient(to top, #222, #000);
+    /*background: linear-gradient(to top, #222, #000);*/
+    background: #011;
     color: oldlace;
+}
+
+.hidden {
+    display: none;
 }
 
 .flex {
@@ -60,4 +65,26 @@ body {
 .overlay input[type="image"] {
     border-radius: 100%;
     width: 3em;
+}
+
+#post-content-container {
+    margin: 25px;
+}
+
+#file-upload, .center {
+    text-align: center;
+}
+
+#post-form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+input {
+    margin-top: 5px;
+}
+
+input[type="file"], input[type="submit"] {
+    font-size: 1em;
+    padding: 2px 5px;
 }

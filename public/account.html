@@ -24,13 +24,9 @@
                     <a href="#Animation">Animation</a>
                 </div>
             </div>
-            <a href="blog.html" class="nav-element">Blog</a>
-            <form action="#search" class="search-bar nav-element" >
-                <input type="text" placeholder="Search...">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
             <div class="active">
-                <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp">
+                <a href="account.html" class="nav-element">Profile</a>
+                <!-- <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp"> -->
             </div>
             <button id="logout" class="nav-element nav-button">Logout</button>
         </nav>
@@ -39,59 +35,22 @@
     <main>
         <section id="profile"></section>
         <section id="editForm"></section>
-        
-        <!-- <div class="heading">
-            <div id="profile-information">
-                <div>
-                    <img id="profile-picture" src="images/blank-profile-picture.webp" alt="Your Profile Picture">
-                </div>
-
-                <div>
-                    <h3 id="name" class="padding">Alec Lehmphul</h3>
-                    <p id="bio" class="padding">Bio information would go here!</p>
-                    <p class="padding">Interests:</p>
-                    <div id="interests" class="padding">
-                        <a href="home.html">Photography</a>
-                        <a href="home.html">Landscapes</a>
-                    </div>
-                </div>
-            </div>
-            <button id="update-profile-btn" class="padding">Update Profile</button>
-        </div> -->
 
         <hr>
 
         <!-- The User's Posts would load here -->
         <div id="user-posts">
             <div id="main-container" class="flex">
-                <div id="right-column" class="flex">
-                    <div class="post">
-                        <img src="images/lonely_crop.jpg" alt="Crop">
-                        <div class="overlay flex">
-                            <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
-                            <a href="#">aleclehmphul</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="mid-column" class="flex">
-                    <div class="post">
-                        <img src="images/train_station.jpg" alt="Train Station">
-                        <div class="overlay flex">
-                            <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
-                            <a href="#">aleclehmphul</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="left-column" class="flex">
-                    <div class="post">
-                        <img src="images/nightlife.jpg" alt="Night Life">
-                        <div class="overlay flex">
-                            <input type="image" alt="Profile Picture" src="images/blank-profile-picture.webp">
-                            <a href="#">aleclehmphul</a>
-                        </div>
-                    </div>
-                </div>
+                <div id="right-column" class="flex"></div>
+                <div id="mid-column" class="flex"></div>
+                <div id="left-column" class="flex"></div>
             </div>
+        </div>
+
+        <div class="center">
+            <section id="editPostImage"></section>
+            <section id="editPostForm"></section>
+            <section id="updateMessage"></section>
         </div>
     </main>
 
