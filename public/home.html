@@ -19,18 +19,15 @@
     <header>
         <nav>
             <a href="home.html" class="active nav-element">Home</a>
-            <div class="dropdown">
+            <div class="dropdown nav-element">
                 <button class="drop-button">Explore<span class="space-next-to-icon"><i class="fa fa-caret-down"></i></span></button>
                 <div class="dropdown-content">
-                    <a href="#Art">Art</a>
-                    <a href="#Photography">Photography</a>
-                    <a href="#Animation">Animation</a>
+                    <a href="art.html">Art</a>
+                    <a href="photography.html">Photography</a>
+                    <a href="animation.html">Animation</a>
                 </div>
             </div>
-            <div>
-                <a href="account.html" class="nav-element">Profile</a>
-                <!-- <input id="your-account-btn" class="account-link" type="image" alt="Your Profile Picture" src="images/blank-profile-picture.webp"> -->
-            </div>
+            <a href="account.html" class="nav-element">Profile</a>
             <button id="logout" class="nav-element nav-button">Logout</button>
         </nav>
     </header>
@@ -47,11 +44,29 @@
                     <button type="submit" id="submission-btn-1">Upload</button>
                 </form>
                 <form id="post-form" class="hidden">
-                    <h3>Part 2 of 2: Add Caption</h3>
+                    <h3>Part 2 of 2: Add Caption and Tag(s)</h3>
+                    
                     <label for="caption">Post Caption</label>
                     <input id="caption" type="text" name="caption" required/> <br>
+
+                    <fieldset>
+                        <legend>Choose your tags</legend>
+                    
+                        <input type="checkbox" id="art" name="art">
+                        <label for="art">Art</label><br/>
+                    
+                        <input type="checkbox" id="photography" name="photography">
+                        <label for="photography">Photography</label><br/>
+                    
+                        <input type="checkbox" id="animation" name="animation">
+                        <label for="animation">Animation</label>
+                      </fieldset>
+
                     <button id="post-btn" type="submit"><i class="fa fa-plus"></i>Create Post</button>
                     <button id="cancel">Cancel</button>
+                    <br>
+                    <br>
+                    <button id="test">test</button>
                 </form>
                 <p id="result" class="center"></p>
             </div>
@@ -68,10 +83,10 @@
 
     </main>
 
-    <!-- Footer/Company details -->
-    <footer>
+    <div id="post-selected"></div>
+    <div id="comment-section"></div>
+    <div id="no-posts"></div>
 
-    </footer>
 </body>
 </html>
 

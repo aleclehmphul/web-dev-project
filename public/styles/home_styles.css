@@ -14,6 +14,10 @@ body {
     display: flex;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 #main-container {
     justify-content: center;
 }
@@ -25,6 +29,7 @@ body {
 .post {
     position: relative;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 #right-column, #mid-column, #left-column {
@@ -32,7 +37,29 @@ body {
     margin: 8px;
 }
 
+.top-overlay {
+    position: absolute;
+    top: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: oldlace;
+    font-size: 20px;
+    padding: 16px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.post:hover .top-overlay {
+    opacity: 1;
+}
+
 .overlay {
+    flex-direction: column;
     position: absolute;
     bottom: 0;
     background: rgb(0, 0, 0);
@@ -58,13 +85,13 @@ body {
     color: oldlace;
     margin-left: 0.5em;
 }
-.overlay a:hover {
+/* .overlay a:hover {
     text-decoration: underline;
-}
+} */
 
-.overlay input[type="image"] {
+.overlay input[type="image"], .overlay img {
     border-radius: 100%;
-    width: 3em;
+    width: 2em;
 }
 
 #post-content-container {
@@ -87,4 +114,115 @@ input {
 input[type="file"], input[type="submit"] {
     font-size: 1em;
     padding: 2px 5px;
+}
+
+#post-selected {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#post-selected div {
+    display: flex;
+    justify-content: center;
+}
+
+#back {
+    position: relative;
+    top: 0;
+}
+
+.comment {
+    background-color: whitesmoke;
+    color: black;
+    margin: 5px;
+    padding: 20px;
+    border: 3px solid black;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    border-right: none;
+}
+
+#comment-section {
+    box-shadow: 10px 5px 5px #333;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#comment-author {
+    font-size: 16px;
+}
+#comment-text {
+    font-size: 18px;
+}
+
+#comment-timestamp {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.btn {
+    /* display: block; */
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    background-color: #666;
+    padding: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #666;
+}
+
+#commentBtn, #commentSubmit, #cancelComment {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#comment-submit-form {
+    margin: auto;
+}
+
+#comment-field {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+fieldset {
+    width: fit-content;
+    text-align: left;
+    margin: 15px auto;
+}
+
+#result, #no-posts {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.align {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-caption-display {
+    margin-top: 5px;
+    font-size: 24px;
 }

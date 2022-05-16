@@ -85,6 +85,15 @@ router.get('/getPosts', async (req, res) => {
     }
 });
 
+router.get('/getMostRecentPost', async (req, res) => {
+    try {
+        const post = await Post.getMostRecentPost();
+        res.send(post);
+    } catch (err) {
+        res.status(401).send({message: err.message});
+    }
+});
+
 
 router.post('/createPost', async (req, res) => {
     try {

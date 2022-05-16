@@ -123,8 +123,10 @@ function profilePostHTMLComponents(columnPosition, imageFileName, post_id) {
             <img src="../../uploads/${imageFileName}" alt="post">
 
             <div class="overlay flex">
-                <button id="${post_id}">Delete Post</button>
-                <button id="_${post_id}">Edit Caption</button>
+                <div>
+                    <button id="${post_id}">Delete Post</button>
+                    <button id="_${post_id}">Edit Caption</button>
+                </div>
             </div>
         </div>
     `;

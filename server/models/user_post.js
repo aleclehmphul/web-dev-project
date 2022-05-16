@@ -58,9 +58,16 @@ async function getUserPosts(user_id) {
     return await con.query(sql);
 }
 
+async function getMostRecentPost() {
+    let sql = `SELECT MAX(post_id) as newest_post FROM posts`;
+    return await con.query(sql);
+}
+
 
 async function getSinglePost(post_data) {
-    let sql = `SELECT * FROM posts WHERE post_id = ${post_data.post_id}`;
+    let sql = `SELECT posts.post_id, posts.post_creator, posts.post_caption, posts.post_image_path, users.user_id, users.username 
+    FROM posts LEFT JOIN users ON posts.post_creator = users.user_id WHERE posts.post_id = ${post_data.post_id}`;
+    // let sql = `SELECT * FROM posts WHERE post_id = ${post_data.post_id}`;
     return await con.query(sql);
 }
 
@@ -77,4 +84,4 @@ async function deletePost(post_id) {
     await con.query(sql);
 }
 
-module.exports = { createTable, createPost, getPosts, getPost, addCaption, deletePost, getUserPosts, getSinglePost, updateCaption};
+module.exports = { createTable, createPost, getPosts, getPost, addCaption, deletePost, getUserPosts, getSinglePost, updateCaption, getMostRecentPost};

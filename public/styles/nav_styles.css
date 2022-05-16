@@ -45,13 +45,17 @@ nav a {
     padding: 16px 18px;
 }
 
+.nav-element {
+    width: 25%;
+}
+
 .nav-button {
     border: none;
     font-size: 20px;
     background-color: #333;
     color: oldlace;
     text-align: center;
-    padding: 16px 18px;
+    padding: 16px 0;
 }
 
 .account-link {
@@ -65,7 +69,7 @@ nav a {
     border-radius: 100%;
 }
 
-.active {
+.active, .active-btn {
     background-color: firebrick;
 }
 
@@ -94,7 +98,8 @@ nav a:hover, .dropdown:hover .drop-button, .nav-button:hover {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    /* min-width: 160px; */
+    width: 25%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
