@@ -10,7 +10,7 @@ async function createTable() {
         post_image_path VARCHAR(255) NOT NULL,
         post_caption VARCHAR(255) NOT NULL,
         CONSTRAINT post_pk PRIMARY KEY(post_id),
-        CONSTRAINT user_fk FOREIGN KEY(post_creator) REFERENCES users(user_id)
+        CONSTRAINT user_fk FOREIGN KEY(post_creator) REFERENCES users(user_id) ON DELETE CASCADE
     )`;
     await con.query(sql);
 }

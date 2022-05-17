@@ -10,8 +10,8 @@ async function createTable() {
         comment_text VARCHAR(255) NOT NULL,
         comment_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         CONSTRAINT comment_pk PRIMARY KEY(comment_id),
-        CONSTRAINT user_comment_fk FOREIGN KEY(comment_author) REFERENCES users(user_id),
-        CONSTRAINT post_comment_fk FOREIGN KEY(post_id) REFERENCES posts(post_id)
+        CONSTRAINT user_comment_fk FOREIGN KEY(comment_author) REFERENCES users(user_id) ON DELETE CASCADE,
+        CONSTRAINT post_comment_fk FOREIGN KEY(post_id) REFERENCES posts(post_id) ON DELETE CASCADE
     )`;
     await con.query(sql);
 }

@@ -8,7 +8,7 @@ async function createTable() {
         post_id INT NOT NULL,
         tag_name VARCHAR(255) NOT NULL,
         CONSTRAINT tag_pk PRIMARY KEY(tag_id),
-        CONSTRAINT post_id_fk FOREIGN KEY(post_id) REFERENCES posts(post_id)
+        CONSTRAINT post_id_fk FOREIGN KEY(post_id) REFERENCES posts(post_id) ON DELETE CASCADE
     )`;
     await con.query(sql);
 }
